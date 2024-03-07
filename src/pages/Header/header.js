@@ -1,19 +1,14 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import { useState } from "react";
 import { gsap } from "gsap";
-import { CustomEase } from "gsap/CustomEase";
-import { Outlet, Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import logo from "../../assets/images/logo.svg";
 import "./header.scss";
 
 function Header() {
   const navigate = useNavigate();
-  const el = useRef();
   const elSocials = useRef();
-  // const q = gsap.utils.selector(el);
   const s = gsap.utils.selector(elSocials);
-  // const tl = useRef();
   const tlMenu = useRef();
   const [checked, setChecked] = useState(false);
 
@@ -134,14 +129,6 @@ function Header() {
       );
   };
 
-  const triggerAnime = () => {
-    if (checked) {
-      return animeOne(), animeTwo();
-    } else if (!checked) {
-      return null;
-    }
-    return null;
-  };
 
   const check = () => {
     return (checked = !checked);
@@ -235,6 +222,7 @@ function Header() {
               className="twitter"
               href="https://t.me/MilliyBro"
               target="_blank"
+              rel="noreferrer"
             >
               <div className="twitter_box">
                 <svg
@@ -271,6 +259,7 @@ function Header() {
               className="schedule"
               href="https://calendly.com/edeworonyedika"
               target="_blank"
+              rel="noreferrer"
             >
               <div className="schedule_box">
                 <svg
